@@ -1,9 +1,11 @@
-import logo from './logo.svg';
+import React from 'react';
+import TopNav from './components/topnav/navbar';
+
 
 function App() {
   return (
     <div className="App">
-        CRM
+      <TopNav />
     </div>
   );
 }
