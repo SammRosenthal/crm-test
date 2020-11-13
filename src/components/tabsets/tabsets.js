@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import PolicyTabs from "./tabs/policyTabs";
 import { makeStyles } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
 import Tabs from "@material-ui/core/Tabs";
@@ -69,7 +70,7 @@ export default function SimpleTabs() {
         </Tabs>
       </AppBar>
       <TabPanel value={value} index={0}>
-        Item One
+        <PolicyTabs />
       </TabPanel>
       <TabPanel value={value} index={1}>
         Item Two
