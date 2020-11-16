@@ -1,6 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 import PolicyTabs from "./tabs/policyTabs";
+import DriverTabs from "./tabs/driverTabs";
+import VehicleTabs from "./tabs/vehicleTabs";
 import { makeStyles } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
 import Tabs from "@material-ui/core/Tabs";
@@ -64,19 +66,19 @@ export default function SimpleTabs() {
           onChange={handleChange}
           aria-label="simple tabs example"
         >
-          <Tab label="Item One" {...a11yProps(0)} />
-          <Tab label="Item Two" {...a11yProps(1)} />
-          <Tab label="Item Three" {...a11yProps(2)} />
+          <Tab label="Policy" {...a11yProps(0)} />
+          <Tab label="Driver" {...a11yProps(1)} />
+          <Tab label="Vehicle" {...a11yProps(2)} />
         </Tabs>
       </AppBar>
       <TabPanel value={value} index={0}>
         <PolicyTabs />
       </TabPanel>
       <TabPanel value={value} index={1}>
-        Item Two
+        <DriverTabs />
       </TabPanel>
       <TabPanel value={value} index={2}>
-        Item Three
+        <VehicleTabs />
       </TabPanel>
     </div>
   );

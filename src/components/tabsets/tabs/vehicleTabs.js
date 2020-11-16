@@ -10,7 +10,7 @@ const useStyles = makeStyles({
   },
 });
 
-export default function PolicyTabs() {
+export default function VehicleTabs() {
   const classes = useStyles();
   const [value, setValue] = React.useState(0);
 
@@ -27,8 +27,10 @@ export default function PolicyTabs() {
         textColor="primary"
         centered
       >
-        <Tab label="Policy" />
-        <Tab label="Census" />
+        <Tab label="Vehicle" />
+        <Tab label="Mileage Calculator" />
+        <Tab label="Assignments" />
+        <Tab label="Special Equipment" />
       </Tabs>
     </Paper>
   );
