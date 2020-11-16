@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import PolicyTabs from "./tabs/policyTabs";
 import DriverTabs from "./tabs/driverTabs";
 import VehicleTabs from "./tabs/vehicleTabs";
+import PremiumTabs from './tabs/premiumTabs';
 import { makeStyles } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
 import Tabs from "@material-ui/core/Tabs";
@@ -64,11 +65,11 @@ export default function SimpleTabs() {
         <Tabs
           value={value}
           onChange={handleChange}
-          aria-label="simple tabs example"
         >
           <Tab label="Policy" {...a11yProps(0)} />
           <Tab label="Driver" {...a11yProps(1)} />
           <Tab label="Vehicle" {...a11yProps(2)} />
+          <Tab label="Premium" {...a11yProps(3)} />
         </Tabs>
       </AppBar>
       <TabPanel value={value} index={0}>
@@ -79,6 +80,9 @@ export default function SimpleTabs() {
       </TabPanel>
       <TabPanel value={value} index={2}>
         <VehicleTabs />
+      </TabPanel>
+      <TabPanel value={value} index={3}>
+        <PremiumTabs />
       </TabPanel>
     </div>
   );
