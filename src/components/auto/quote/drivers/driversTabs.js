@@ -27,9 +27,8 @@ export default function DriversTabs() {
         textColor="primary"
         centered
       >
-        <Tab label="Premium" />
-        <Tab label="Billing and Payment" />
-        <Tab label="Print" />
+        <Tab label="Drivers" />
+        <Tab label="Violations/Accidents" />
       </Tabs>
     </Paper>
   );

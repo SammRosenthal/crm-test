@@ -30,7 +30,6 @@ export default function VehicleTabs() {
         <Tab label="Vehicle" />
         <Tab label="Mileage Calculator" />
         <Tab label="Assignments" />
-        <Tab label="Special Equipment" />
       </Tabs>
     </Paper>
   );

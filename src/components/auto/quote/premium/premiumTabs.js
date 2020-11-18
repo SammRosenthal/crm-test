@@ -28,8 +28,8 @@ export default function PremiumTabs() {
         centered
       >
         <Tab label="Premium" />
-        <Tab label="Billing and Payment" />
         <Tab label="Print" />
+        <Tab label="Billing Options" />
       </Tabs>
     </Paper>
   );
