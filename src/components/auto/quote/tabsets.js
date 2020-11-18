@@ -1,9 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
-import PolicyTabs from "./tabs/policyTabs";
-import DriverTabs from "./tabs/driverTabs";
-import VehicleTabs from "./tabs/vehicleTabs";
-import PremiumTabs from './tabs/premiumTabs';
+import QuoteTabs from "./quote/quoteTabs";
+import DriverTabs from "./drivers/driversTabs";
+import VehicleTabs from "./vehicles/vehiclesTabs";
+import PremiumTabs from "./premium/premiumTabs";
 import { makeStyles } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
 import Tabs from "@material-ui/core/Tabs";
@@ -51,7 +51,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function SimpleTabs() {
+export default function TabSets() {
   const classes = useStyles();
   const [value, setValue] = React.useState(0);
 
@@ -66,14 +66,14 @@ export default function SimpleTabs() {
           value={value}
           onChange={handleChange}
         >
-          <Tab label="Policy" {...a11yProps(0)} />
+          <Tab label="Quote" {...a11yProps(0)} />
           <Tab label="Driver" {...a11yProps(1)} />
           <Tab label="Vehicle" {...a11yProps(2)} />
           <Tab label="Premium" {...a11yProps(3)} />
         </Tabs>
       </AppBar>
       <TabPanel value={value} index={0}>
-        <PolicyTabs />
+        <QuoteTabs />
       </TabPanel>
       <TabPanel value={value} index={1}>
         <DriverTabs />
