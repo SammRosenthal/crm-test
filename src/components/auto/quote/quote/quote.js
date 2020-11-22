@@ -4,6 +4,7 @@ import RiskAddress from './riskAddress';
 import Grid from '@material-ui/core/Grid';
 import TextField from '@material-ui/core/TextField';
 import MenuItem from '@material-ui/core/MenuItem';
+import DropDown from '../../../shared/dropDown';
 
 const yesNoDropDown = [
     {
@@ -105,26 +106,15 @@ export default function Quote() {
                     </TextField>
                 </Grid>
                 <Grid item xs={12} sm={6} className={classes.textField}>
-                    <TextField select label="Life Insurance" variant="outlined" value={lifeInsurance} onChange={handleLifeInsurance} className={classes.dropDown}>
-                        {yesNoDropDown.map((dd) => {
-                            return (
-                                <MenuItem key={dd.key} value={dd.key}>
-                                    {dd.value}
-                                </MenuItem>
-                            )
-                        })}
-                    </TextField>
+                    <DropDown
+                        label="Life Insurance"
+                        value={lifeInsurance}
+                        handler={handleLifeInsurance}
+                        style={classes.dropDown}
+                        dropDownData={yesNoDropDown}
+                    />
                 </Grid>
                 <Grid item xs={12} sm={6} className={classes.textField}>
-                    <TextField select label="Multi Policy" variant="outlined" value={multiPolicy} onChange={handleMultiPolicy} className={classes.dropDown}>
-                        {yesNoDropDown.map((dd) => {
-                            return (
-                                <MenuItem key={dd.key} value={dd.key}>
-                                    {dd.value}
-                                </MenuItem>
-                            )
-                        })}
-                    </TextField>
                 </Grid>
             </Grid>
             <RiskAddress />
