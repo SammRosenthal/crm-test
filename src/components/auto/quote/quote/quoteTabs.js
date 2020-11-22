@@ -55,7 +55,6 @@ export default function QuoteTabs() {
         onChange={handleChange}
         indicatorColor="primary"
         textColor="primary"
-        centered
       >
         <Tab label="Quote"  {...a11yProps(0)}/>
       </Tabs>
