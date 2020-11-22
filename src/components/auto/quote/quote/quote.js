@@ -26,9 +26,8 @@ const useStyles = makeStyles((theme) => ({
     },
     textField: {
         textAlign: "center",
-        width: 215
     },
-    dropDown: {
+    input: {
         width: 215,
         textAlign: "left"
     }
@@ -58,15 +57,16 @@ export default function Quote() {
             >
                 <Grid item xs={12} sm={6} className={classes.textField}>
                     <TextField
+                        className={classes.input}
                         label="Quote Effective Date"
                         variant="outlined"
                     />
                 </Grid>
                 <Grid item xs={12} sm={6} className={classes.textField}>
                     <TextField
+                        className={classes.input}
                         label="Exchange Longevity Date"
                         variant="outlined"
-                        className={classes.textField}
                     />
                 </Grid>
                 <Grid item xs={12} sm={6} className={classes.textField}>
@@ -74,19 +74,23 @@ export default function Quote() {
                         label="Business Source"
                         value={businessSource}
                         handler={handleBusinessSource}
-                        style={classes.dropDown}
+                        style={classes.input}
                         dropDownData={yesNoDropDown}
                     />
                 </Grid>
                 <Grid item xs={12} sm={6} className={classes.textField}>
-                    <TextField label="Campaign Code" variant="outlined" />
+                    <TextField
+                        className={classes.input}
+                        label="Campaign Code"
+                        variant="outlined"
+                    />
                 </Grid>
                 <Grid item xs={12} sm={6} className={classes.textField}>
                     <DropDown
                         label="Paid in Full"
                         value={paidInFull}
                         handler={handlePaidInFull}
-                        style={classes.dropDown}
+                        style={classes.input}
                         dropDownData={yesNoDropDown}
                     />
                 </Grid>
@@ -95,7 +99,7 @@ export default function Quote() {
                         label="Watercraft"
                         value={watercraft}
                         handler={handleWatercraft}
-                        style={classes.dropDown}
+                        style={classes.input}
                         dropDownData={yesNoDropDown}
                     />
                 </Grid>
@@ -104,7 +108,7 @@ export default function Quote() {
                         label="Life Insurance"
                         value={lifeInsurance}
                         handler={handleLifeInsurance}
-                        style={classes.dropDown}
+                        style={classes.input}
                         dropDownData={yesNoDropDown}
                     />
                 </Grid>
@@ -113,7 +117,7 @@ export default function Quote() {
                         label="Multi Policy"
                         value={multiPolicy}
                         handler={handleMultiPolicy}
-                        style={classes.dropDown}
+                        style={classes.input}
                         dropDownData={yesNoDropDown}
                     />
                 </Grid>
