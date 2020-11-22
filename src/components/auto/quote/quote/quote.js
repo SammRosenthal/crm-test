@@ -1,4 +1,6 @@
 import React, {useState} from 'react';
+import {makeStyles} from '@material-ui/core/styles';
+import RiskAddress from './riskAddress';
 import Grid from '@material-ui/core/Grid';
 import TextField from '@material-ui/core/TextField';
 import MenuItem from '@material-ui/core/MenuItem';
@@ -14,8 +16,26 @@ const yesNoDropDown = [
     }
 ]
 
+const useStyles = makeStyles((theme) => ({
+    root: {
+        flexGrow: 1,
+    },
+    container: {
+        justifyContent: "center"
+    },
+    textField: {
+        textAlign: "center",
+        width: 215
+    },
+    dropDown: {
+        width: 215,
+        textAlign: "left"
+    }
+}))
+
 
 export default function Quote() {
+    const classes = useStyles();
     const [businessSource, setBusinessSource] = useState("");
     const [paidInFull, setPaidInFull] = useState("");
     const [lifeInsurance, setLifeInsurance] = useState("");
@@ -29,78 +49,85 @@ export default function Quote() {
     const handleMultiPolicy = (e) => {setMultiPolicy(e.target.value)}
 
     return (
-        <>
+        <div className={classes.root}>
             <Grid
-            container
-            direction="row"
-            justify="space-around"
-            alignItems="center"
+                container
+                spacing={3}
+                className={classes.container}
             >
-                <TextField label="Quote Effective Date" variant="outlined" style={{ width: 215 }}/>
-                <TextField label="Exchange Longevity Date" variant="outlined" style={{ width: 215 }}/>
+                <Grid item xs={12} sm={6} className={classes.textField}>
+                    <TextField
+                        label="Quote Effective Date"
+                        variant="outlined"
+                    />
+                </Grid>
+                <Grid item xs={12} sm={6} className={classes.textField}>
+                    <TextField
+                        label="Exchange Longevity Date"
+                        variant="outlined"
+                        className={classes.textField}
+                    />
+                </Grid>
+                <Grid item xs={12} sm={6} className={classes.textField}>
+                    <TextField select label="Business Source" variant="outlined" value={businessSource} onChange={handleBusinessSource} className={classes.dropDown}>
+                        {yesNoDropDown.map((dd) => {
+                            return (
+                                <MenuItem key={dd.key} value={dd.key}>
+                                    {dd.value}
+                                </MenuItem>
+                            )
+                        })}
+                    </TextField>
+                </Grid>
+                <Grid item xs={12} sm={6} className={classes.textField}>
+                    <TextField label="Campaign Code" variant="outlined" />
+                </Grid>
+                <Grid item xs={12} sm={6} className={classes.textField}>
+                    <TextField select label="Paid in Full" variant="outlined" value={paidInFull} onChange={handlePaidInFull} className={classes.dropDown}>
+                        {yesNoDropDown.map((dd) => {
+                            return (
+                                <MenuItem key={dd.key} value={dd.key}>
+                                    {dd.value}
+                                </MenuItem>
+                            )
+                        })}
+                    </TextField>
+                </Grid>
+                <Grid item xs={12} sm={6} className={classes.textField}>
+                    <TextField select label="Watercraft" variant="outlined" value={watercraft} onChange={handleWatercraft} className={classes.dropDown}>
+                        {yesNoDropDown.map((dd) => {
+                            return (
+                                <MenuItem key={dd.key} value={dd.key}>
+                                    {dd.value}
+                                </MenuItem>
+                            )
+                        })}
+                    </TextField>
+                </Grid>
+                <Grid item xs={12} sm={6} className={classes.textField}>
+                    <TextField select label="Life Insurance" variant="outlined" value={lifeInsurance} onChange={handleLifeInsurance} className={classes.dropDown}>
+                        {yesNoDropDown.map((dd) => {
+                            return (
+                                <MenuItem key={dd.key} value={dd.key}>
+                                    {dd.value}
+                                </MenuItem>
+                            )
+                        })}
+                    </TextField>
+                </Grid>
+                <Grid item xs={12} sm={6} className={classes.textField}>
+                    <TextField select label="Multi Policy" variant="outlined" value={multiPolicy} onChange={handleMultiPolicy} className={classes.dropDown}>
+                        {yesNoDropDown.map((dd) => {
+                            return (
+                                <MenuItem key={dd.key} value={dd.key}>
+                                    {dd.value}
+                                </MenuItem>
+                            )
+                        })}
+                    </TextField>
+                </Grid>
             </Grid>
-            <br />
-            <Grid
-            container
-            direction="row"
-            justify="space-around"
-            alignItems="center"
-            >
-                <TextField select label="Business Source" variant="outlined"  style={{ width: 215 }} value={businessSource} onChange={handleBusinessSource} />
-                <TextField label="Campaign Code" variant="outlined" style={{ width: 215 }} />
-            </Grid>
-            <br />
-            <Grid
-            container
-            direction="row"
-            justify="space-around"
-            alignItems="center"
-            >
-                <TextField select label="Paid in Full" variant="outlined"  style={{ width: 215 }} value={paidInFull} onChange={handlePaidInFull}>
-                    {yesNoDropDown.map((dd) => {
-                        return (
-                            <MenuItem key={dd.key} value={dd.key}>
-                                {dd.value}
-                            </MenuItem>
-                        )
-                    })}
-                </TextField>
-                <TextField select label="Watercraft" variant="outlined" style={{ width: 215 }} value={watercraft} onChange={handleWatercraft}>
-                    {yesNoDropDown.map((dd) => {
-                        return (
-                            <MenuItem key={dd.key} value={dd.key}>
-                                {dd.value}
-                            </MenuItem>
-                        )
-                    })}
-                </TextField>
-            </Grid>
-            <br />
-            <Grid
-            container
-            direction="row"
-            justify="space-around"
-            alignItems="center"
-            >
-                <TextField select label="Life Insurance" variant="outlined" style={{ width: 215 }} value={lifeInsurance} onChange={handleLifeInsurance}>
-                    {yesNoDropDown.map((dd) => {
-                        return (
-                            <MenuItem key={dd.key} value={dd.key}>
-                                {dd.value}
-                            </MenuItem>
-                        )
-                    })}
-                </TextField>
-                <TextField select label="Multi Policy" variant="outlined" style={{ width: 215 }} value={multiPolicy} onChange={handleMultiPolicy}>
-                    {yesNoDropDown.map((dd) => {
-                        return (
-                            <MenuItem key={dd.key} value={dd.key}>
-                                {dd.value}
-                            </MenuItem>
-                        )
-                    })}
-                </TextField>
-            </Grid>
-        </>
+            <RiskAddress />
+        </div>
     )
 }
