@@ -70,40 +70,34 @@ export default function Quote() {
                     />
                 </Grid>
                 <Grid item xs={12} sm={6} className={classes.textField}>
-                    <TextField select label="Business Source" variant="outlined" value={businessSource} onChange={handleBusinessSource} className={classes.dropDown}>
-                        {yesNoDropDown.map((dd) => {
-                            return (
-                                <MenuItem key={dd.key} value={dd.key}>
-                                    {dd.value}
-                                </MenuItem>
-                            )
-                        })}
-                    </TextField>
+                    <DropDown
+                        label="Business Source"
+                        value={businessSource}
+                        handler={handleBusinessSource}
+                        style={classes.dropDown}
+                        dropDownData={yesNoDropDown}
+                    />
                 </Grid>
                 <Grid item xs={12} sm={6} className={classes.textField}>
                     <TextField label="Campaign Code" variant="outlined" />
                 </Grid>
                 <Grid item xs={12} sm={6} className={classes.textField}>
-                    <TextField select label="Paid in Full" variant="outlined" value={paidInFull} onChange={handlePaidInFull} className={classes.dropDown}>
-                        {yesNoDropDown.map((dd) => {
-                            return (
-                                <MenuItem key={dd.key} value={dd.key}>
-                                    {dd.value}
-                                </MenuItem>
-                            )
-                        })}
-                    </TextField>
+                    <DropDown
+                        label="Paid in Full"
+                        value={paidInFull}
+                        handler={handlePaidInFull}
+                        style={classes.dropDown}
+                        dropDownData={yesNoDropDown}
+                    />
                 </Grid>
                 <Grid item xs={12} sm={6} className={classes.textField}>
-                    <TextField select label="Watercraft" variant="outlined" value={watercraft} onChange={handleWatercraft} className={classes.dropDown}>
-                        {yesNoDropDown.map((dd) => {
-                            return (
-                                <MenuItem key={dd.key} value={dd.key}>
-                                    {dd.value}
-                                </MenuItem>
-                            )
-                        })}
-                    </TextField>
+                    <DropDown
+                        label="Watercraft"
+                        value={watercraft}
+                        handler={handleWatercraft}
+                        style={classes.dropDown}
+                        dropDownData={yesNoDropDown}
+                    />
                 </Grid>
                 <Grid item xs={12} sm={6} className={classes.textField}>
                     <DropDown
@@ -115,6 +109,13 @@ export default function Quote() {
                     />
                 </Grid>
                 <Grid item xs={12} sm={6} className={classes.textField}>
+                    <DropDown
+                        label="Multi Policy"
+                        value={multiPolicy}
+                        handler={handleMultiPolicy}
+                        style={classes.dropDown}
+                        dropDownData={yesNoDropDown}
+                    />
                 </Grid>
             </Grid>
             <RiskAddress />
