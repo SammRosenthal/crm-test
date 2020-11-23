@@ -4,75 +4,7 @@ import RiskAddress from './riskAddress';
 import Grid from '@material-ui/core/Grid';
 import TextField from '@material-ui/core/TextField';
 import DropDown from '../../../shared/dropDown';
-
-const yesNoDropDown = [
-    {
-        key: "N",
-        value: "No"
-    },
-    {
-        key: "Y",
-        value: "Yes"
-    }
-]
-
-const businessSourceDropDown = [
-    {
-        key: "N",
-        value: "None"
-    },
-    {
-        key: "1",
-        value: "Option 1"
-    },
-    {
-        key: "N",
-        value: "Option 2"
-    },
-    {
-        key: "N",
-        value: "Option 3"
-    },
-]
-
-const multiPolicyDropDown = [
-    {
-        key: "N",
-        value: "None"
-    },
-    {
-        key: "1",
-        value: "Option 1"
-    },
-    {
-        key: "2",
-        value: "Option 2"
-    },
-    {
-        key: "3",
-        value: "Option 3"
-    },
-]
-
-const lifeInsuranceDropDown = [
-    {
-        key: "N",
-        value: "None"
-    },
-    {
-        key: "1",
-        value: "Option 1"
-    },
-    {
-        key: "2",
-        value: "Option 2"
-    },
-    {
-        key: "3",
-        value: "Option 3"
-    },
-
-]
+import {yesNoDropDown, businessSourceDropDown, multiPolicyDropDown, lifeInsuranceDropDown} from '../../tempAutoDropDown';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -89,7 +21,6 @@ const useStyles = makeStyles((theme) => ({
         textAlign: "left"
     }
 }))
-
 
 export default function Quote() {
     const classes = useStyles();
