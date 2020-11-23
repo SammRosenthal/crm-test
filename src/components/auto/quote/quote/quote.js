@@ -16,6 +16,64 @@ const yesNoDropDown = [
     }
 ]
 
+const businessSourceDropDown = [
+    {
+        key: "N",
+        value: "None"
+    },
+    {
+        key: "1",
+        value: "Option 1"
+    },
+    {
+        key: "N",
+        value: "Option 2"
+    },
+    {
+        key: "N",
+        value: "Option 3"
+    },
+]
+
+const multiPolicyDropDown = [
+    {
+        key: "N",
+        value: "None"
+    },
+    {
+        key: "1",
+        value: "Option 1"
+    },
+    {
+        key: "2",
+        value: "Option 2"
+    },
+    {
+        key: "3",
+        value: "Option 3"
+    },
+]
+
+const lifeInsuranceDropDown = [
+    {
+        key: "N",
+        value: "None"
+    },
+    {
+        key: "1",
+        value: "Option 1"
+    },
+    {
+        key: "2",
+        value: "Option 2"
+    },
+    {
+        key: "3",
+        value: "Option 3"
+    },
+
+]
+
 const useStyles = makeStyles((theme) => ({
     root: {
         flexGrow: 1,
@@ -74,7 +132,7 @@ export default function Quote() {
                         value={businessSource}
                         handler={handleBusinessSource}
                         style={classes.input}
-                        dropDownData={yesNoDropDown}
+                        dropDownData={businessSourceDropDown}
                     />
                 </Grid>
                 <Grid item xs={12} sm={6} className={classes.textField}>
@@ -108,7 +166,7 @@ export default function Quote() {
                         value={lifeInsurance}
                         handler={handleLifeInsurance}
                         style={classes.input}
-                        dropDownData={yesNoDropDown}
+                        dropDownData={lifeInsuranceDropDown}
                     />
                 </Grid>
                 <Grid item xs={12} sm={6} className={classes.textField}>
@@ -117,7 +175,7 @@ export default function Quote() {
                         value={multiPolicy}
                         handler={handleMultiPolicy}
                         style={classes.input}
-                        dropDownData={yesNoDropDown}
+                        dropDownData={multiPolicyDropDown}
                     />
                 </Grid>
             </Grid>
