@@ -37,6 +37,7 @@ export default function Quote() {
     const handleMultiPolicy = (e) => {setMultiPolicy(e.target.value)}
 
     return (
+        <>
         <div className={classes.root}>
             <Grid
                 container
@@ -112,5 +113,6 @@ export default function Quote() {
             </Grid>
             <RiskAddress />
         </div>
+        </>
     )
 }
