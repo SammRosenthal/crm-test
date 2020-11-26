@@ -2,7 +2,6 @@ import React from 'react';
 import {makeStyles} from '@material-ui/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Paper from '@material-ui/core/Paper';
-import Toolbar from '@material-ui/core/Toolbar';
 import Grid from '@material-ui/core/Grid';
 import TextField from '@material-ui/core/TextField';
 
