@@ -3,6 +3,7 @@ import {makeStyles} from '@material-ui/styles';
 import Divider from '../../../shared/divider';
 import Grid from '@material-ui/core/Grid';
 import TextField from '@material-ui/core/TextField';
+import DropDown from '../../../shared/dropDown';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -19,13 +20,13 @@ const useStyles = makeStyles((theme) => ({
         textAlign: "left"
     },
     longInput: {
-        width: 500,
+        width: 508,
         textAlign: "left",
         marginLeft: 28
     }
 }))
 
-
+// todo: fix styling on street address field
 
 export default function RiskAddress() {
     const classes = useStyles();
@@ -50,6 +51,7 @@ export default function RiskAddress() {
                     className={classes.input}
                     label="City"
                     variant="outlined"
+                    disabled={true}
                 />
             </Grid>
             <Grid item xs={12} sm={3} className={classes.textField}>
@@ -57,6 +59,7 @@ export default function RiskAddress() {
                     className={classes.input}
                     label="State"
                     variant="outlined"
+                    disabled={true}
                 />
             </Grid>
             <Grid item xs={12} sm={3} className={classes.textField}>
@@ -67,10 +70,11 @@ export default function RiskAddress() {
                 />
             </Grid>
             <Grid item xs={12} sm={3} className={classes.textField}>
-                <TextField
-                    className={classes.input}
+                <DropDown
+                    style={classes.input}
                     label="County"
-                    variant="outlined"
+                    handler={() => console.log("test")}
+                    dropDownData={[]}
                 />
             </Grid>
         </Grid>
