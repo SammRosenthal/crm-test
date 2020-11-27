@@ -26,7 +26,7 @@ export default function RiskAddress() {
 
     return (
         <>
-        <Divider />
+        <Divider text="Risk Address" />
         <Grid
             container
             spacing={3}
