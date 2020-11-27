@@ -17,8 +17,14 @@ const useStyles = makeStyles((theme) => ({
     input: {
         width: 215,
         textAlign: "left"
+    },
+    longInput: {
+        width: 500,
+        textAlign: "left",
+        marginLeft: 28
     }
 }))
+
 
 
 export default function RiskAddress() {
@@ -32,17 +38,38 @@ export default function RiskAddress() {
             spacing={3}
             className={classes.container}
         >
-            <Grid item xs={12} sm={6} className={classes.textField}>
+            <Grid item xs={12}>
                 <TextField
-                    className={classes.input}
-                    label="Quote Effective Date"
+                    className={classes.longInput}
+                    label="Street Address"
                     variant="outlined"
                 />
             </Grid>
-            <Grid item xs={12} sm={6} className={classes.textField}>
+            <Grid item xs={12} sm={3} className={classes.textField}>
                 <TextField
                     className={classes.input}
-                    label="Exchange Longevity Date"
+                    label="City"
+                    variant="outlined"
+                />
+            </Grid>
+            <Grid item xs={12} sm={3} className={classes.textField}>
+                <TextField
+                    className={classes.input}
+                    label="State"
+                    variant="outlined"
+                />
+            </Grid>
+            <Grid item xs={12} sm={3} className={classes.textField}>
+                <TextField
+                    className={classes.input}
+                    label="Zip Code"
+                    variant="outlined"
+                />
+            </Grid>
+            <Grid item xs={12} sm={3} className={classes.textField}>
+                <TextField
+                    className={classes.input}
+                    label="County"
                     variant="outlined"
                 />
             </Grid>
