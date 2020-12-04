@@ -1,10 +1,10 @@
 import React, {useState} from 'react';
 import {makeStyles} from '@material-ui/core/styles';
-import RiskAddress from './riskAddress';
+import RiskAddress from './address';
 import Grid from '@material-ui/core/Grid';
 import TextField from '@material-ui/core/TextField';
 import DropDown from '../../../shared/dropDown';
-import {yesNoDropDown, businessSourceDropDown, multiPolicyDropDown, lifeInsuranceDropDown} from '../../tempAutoDropDown';
+import {yesNoDropDown, businessSourceDropDown} from '../../tempAutoDropDown';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -24,17 +24,17 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Quote() {
     const classes = useStyles();
+    const [effectiveDate, setEffectiveDate] = useState("");
+    const [exchangeDate, setExchangeDate] = useState("");
     const [businessSource, setBusinessSource] = useState("");
     const [paidInFull, setPaidInFull] = useState("");
-    const [lifeInsurance, setLifeInsurance] = useState("");
-    const [watercraft, setWatercraft] = useState("");
-    const [multiPolicy, setMultiPolicy] = useState("");
+    const [existingMember, setExistingMember] = useState("");
 
+    const handleEffectiveDate = (e) => {setEffectiveDate(e.target.value)}
+    const handleExchangeDate = (e) => {setExchangeDate(e.target.value)}
     const handleBusinessSource = (e) => {setBusinessSource(e.target.value)}
     const handlePaidInFull = (e) => {setPaidInFull(e.target.value)}
-    const handleLifeInsurance = (e) => {setLifeInsurance(e.target.value)}
-    const handleWatercraft = (e) => {setWatercraft(e.target.value)}
-    const handleMultiPolicy = (e) => {setMultiPolicy(e.target.value)}
+    const handleExistingMember = (e) => {setExistingMember(e.target.value)}
 
     return (
         <>
@@ -47,15 +47,19 @@ export default function Quote() {
                 <Grid item xs={12} sm={6} className={classes.textField}>
                     <TextField
                         className={classes.input}
-                        label="Quote Effective Date"
+                        label="Effective Date"
                         variant="outlined"
+                        value={effectiveDate}
+                        onChange={(e) => handleEffectiveDate(e)}
                     />
                 </Grid>
                 <Grid item xs={12} sm={6} className={classes.textField}>
                     <TextField
                         className={classes.input}
-                        label="Exchange Longevity Date"
+                        label="Exchange Date"
                         variant="outlined"
+                        value={exchangeDate}
+                        onChange={(e) => handleExchangeDate(e)}
                     />
                 </Grid>
                 <Grid item xs={12} sm={6} className={classes.textField}>
@@ -70,7 +74,7 @@ export default function Quote() {
                 <Grid item xs={12} sm={6} className={classes.textField}>
                     <TextField
                         className={classes.input}
-                        label="Campaign Code"
+                        label="Discount Code"
                         variant="outlined"
                     />
                 </Grid>
@@ -85,29 +89,11 @@ export default function Quote() {
                 </Grid>
                 <Grid item xs={12} sm={6} className={classes.textField}>
                     <DropDown
-                        label="Watercraft"
-                        value={watercraft}
-                        handler={handleWatercraft}
+                        label="Existing Member"
+                        value={existingMember}
+                        handler={handleExistingMember}
                         style={classes.input}
                         dropDownData={yesNoDropDown}
-                    />
-                </Grid>
-                <Grid item xs={12} sm={6} className={classes.textField}>
-                    <DropDown
-                        label="Life Insurance"
-                        value={lifeInsurance}
-                        handler={handleLifeInsurance}
-                        style={classes.input}
-                        dropDownData={lifeInsuranceDropDown}
-                    />
-                </Grid>
-                <Grid item xs={12} sm={6} className={classes.textField}>
-                    <DropDown
-                        label="Multi Policy"
-                        value={multiPolicy}
-                        handler={handleMultiPolicy}
-                        style={classes.input}
-                        dropDownData={multiPolicyDropDown}
                     />
                 </Grid>
             </Grid>
